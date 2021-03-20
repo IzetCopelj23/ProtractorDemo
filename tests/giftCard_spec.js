@@ -4,7 +4,7 @@ const homePage = require('../page-objects/homePage');
 it('Add gift card', function () {
     homePage.getHomePage();
     giftCard.giftCardNavigation();
-    giftCard.clickOption();
+    //giftCard.clickOption();
     // giftCard.clickGraphic();
     giftCard.enterEmail();
     giftCard.enterMessage();
