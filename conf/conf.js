@@ -17,6 +17,10 @@ exports.config = {
 
   onPrepare: function () {
     jasmine.getEnv().addReporter(reporter);
+    var AllureReporter = require('jasmine-allure-reporter');
+    jasmine.getEnv().addReporter(new AllureReporter({
+       resultsDir: 'allure-results'
+    }));
 
     // User credentials
     var username = 'izet.copelj@edu.fit.ba';
@@ -47,15 +51,6 @@ exports.config = {
       reporter.afterLaunch(resolve.bind(this, exitCode));
     });
   },
+  specs: ['../tests/*spec.js']
 
-  // seleniumAddress: 'http://localhost:4444/wd/hub',
-  specs: ['../tests/*spec.js'],
-  multiCapabilities: [{
-    'browserName': 'firefox'
-  }, {
-    'browserName': 'chrome'
-  }],
-  chromeOptions: {
-    'excludeSwitches': ['disable-popup-blocking']
-  }
 }

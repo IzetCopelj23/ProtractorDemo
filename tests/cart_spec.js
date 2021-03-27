@@ -1,4 +1,5 @@
 const cartPage = require('../page-objects/cart');
+describe('Cart', function() {
 
 it('View my cart', function () {
 
@@ -8,3 +9,4 @@ it('View my cart', function () {
     }, 10000);
 });
 
+});
